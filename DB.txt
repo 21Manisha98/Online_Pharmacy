@@ -1,0 +1,64 @@
+User:
+CREATE TABLE `user` (
+  `user_id` bigint NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `role` int DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+Medicine:
+CREATE TABLE `review_detail` (
+  `id` bigint NOT NULL,
+  `comment` varchar(255) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `medicine_id` bigint DEFAULT NULL,
+  `user_id` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+Order
+CREATE TABLE `order_detail` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `created_date` datetime DEFAULT NULL,
+  `is_order` bit(1) DEFAULT NULL,
+  `is_wish_list` bit(1) DEFAULT NULL,
+  `medicineid` bigint DEFAULT NULL,
+  `quentity` bigint DEFAULT NULL,
+  `total_price` bigint DEFAULT NULL,
+  `userid` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+Profile:
+CREATE TABLE `profile_detail` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `address` varchar(255) DEFAULT NULL,
+  `contact` varchar(255) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `full_name` varchar(255) DEFAULT NULL,
+  `userid` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+Query:
+CREATE TABLE `query_detail` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `answer` varchar(255) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `question` varchar(255) DEFAULT NULL,
+  `userid` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+Review:
+CREATE TABLE `review_detail` (
+  `id` bigint NOT NULL,
+  `comment` varchar(255) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `medicine_id` bigint DEFAULT NULL,
+  `user_id` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
